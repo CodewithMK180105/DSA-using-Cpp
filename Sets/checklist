@@ -1,0 +1,82 @@
+what is a set?
+=>  STL container used to store unique values.
+    Values are stored in an ordered state (increasing or decreasing).
+    No indexing
+    Elements are identified by their own values
+    Once value is inserted in a set, it cannot be modified (we need to delete first, and then insert)
+
+Advantages of Set:
+    Unique values
+    ordered
+    dynamic in size
+    Faster ===>     Insertion=>O(log(n))
+                    Deletion=>O(log(n))
+                    Searching=>O(log(n))
+
+Dis-advantages of set:
+    cannot access the elements using the index
+    more memory than arrray
+    not suitable for large datasets
+        ---insertion, deletion==>O(log(n))
+
+Declaration of a set:
+    #include<set>
+    set<data_type> set_name;
+
+    eg: set<int> set1={1,2,3,4,5,6};
+
+    By default the values get sorted in the increasing order
+    In order to make it decreasing. Declare it in following way:
+
+    set<datatype, greater<datatype>> set;
+
+
+    st.begin()           st.end()
+             |                   |
+             |                   |
+st:  rend | 1 | 2 | 3 | 4 | 5 | end
+        |                    |
+        |                    |      
+   st.rend()                st.rbegin()
+
+
+Unordered set: values are stored in an unordered fashion.
+
+---Unique values
+---values will be identified by itself
+---values cannot be modified inside the set
+
+Advantages:
+Insertion, Deletion, and Search is done in the O(1) average time complexity.
+
+worst case is O(n)
+
+Opertaions:
+    1. Insert
+    2. Delete
+    3. Search
+    4. Count
+    5. Load Factor = size of unorderes set/ bucket count
+    6. rehash(x)
+
+Multiset:
+
+It can store duplicate values.
+ordered=> either ascending or descending
+Value can be identified by itself
+value cannot be modified inside the set
+
+Operations:
+    1. insert() => O(log(n))
+    2. erase() => O(log(n)) // erase(start_pos,end_pos) => O(n)
+    3. find() => O(log(n))
+    4. count() => O(K+log(n)) 
+    5. upper_bound()
+    6. lower_bound()
+
+unordered_multiset:
+
+allows duplicate values.
+values are not ordered
+values are identified by itself
+values cannot be modified

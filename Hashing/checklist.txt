@@ -1,0 +1,89 @@
+Hashing
+    ---Insertion O(1)
+    ---Deletion O(1)
+    ---Searching O(1)
+
+Hash function
+
+Hasing techniques
+
+    ---Division method h(k)=k mod m 
+
+    ---Mid-Square method
+        Square the given number and extract the middle integers
+
+    ---Digit Folding method
+        eg: k=12345
+            k1=12
+            k2=34
+            k3=5
+
+            Now, k1+k2+k3=51
+
+    ---Multiplication method
+        h(k)=floor(M(kA mod 1))   .....0<A<1
+
+Collision => Two or more keys having the same Hash value is called as a collision
+
+1. Open Hashing or Closed Addressing or Separate Chaining =====>
+        0   
+        1   761
+        2   682
+        3   
+        4   494 ==> 634 ==> 794
+        5   
+        6   
+        7   567
+        8   
+        9   869
+
+2. Closed Hashing or Opened Addressing =====> h(k)=k mod 10
+
+    a. Linear Probing :if Collision occurs : (h(k) + i) mod 10    0<=i<=9
+
+        0   
+        1   761
+        2   682
+        3   
+        4   494
+        5   634
+        6   794
+        7   567
+        8   
+        9   869                 .............Creates cluster of 4.
+
+    b. Quadratic Probing :if Collision occurs : (h(k) + i^2) mod 10    0<=i<=9
+
+        0   
+        1   761
+        2   682
+        3   
+        4   494
+        5   634
+        6   
+        7   567
+        8   794
+        9   869
+
+    c. Double Hashing :if Collision occurs : (h1(k) + i*h2(k)) mod 10    0<=i<=9
+
+        0   
+        1   761
+        2   682
+        3   
+        4   494
+        5   
+        6   794
+        7   567
+        8   634
+        9   869
+
+Load Factor :Let, n=number of elements
+                 m=number of buckets
+
+            load factor= n/m    ................(Avg entries in one bucket)
+
+            If it gets exceeded (>0.75) then we use Rehashing.
+
+Rehashing: Increasing size of the hash table and re-distributing the elements in it.
+           It is very costly but important.

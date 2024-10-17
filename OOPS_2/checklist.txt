@@ -1,0 +1,42 @@
+Class as a user defined datatype. Classes and Objects.
+
+Passing object as a paremeter in a function
+    ---Pass by value
+    ---Pass by reference
+
+Constructors
+    ---Default
+    ---Parametrized
+    ---Copy
+
+this keyword
+
+Function inside Class
+
+Object pointers
+
+Dynamic Allocation
+
+Create your own vector
+
+Access Modifiers
+    ---Public
+    ---Private
+    ---Protected
+
+Inheritance
+
+Compile and Run time errors
+    Compile time errors
+        Syntactical errors
+    Run time errors
+        divide by zero
+        index out of bounds
+        negative index
+
+Polymorphisms
+    ---Compile time Polymorphism ( Functions overloading), Static polymorphism
+    ---Run time Polymorphism ( Constructors overloading), Dynamic polymorphism
+    ---Operators overloading
+
+Function overriding.
