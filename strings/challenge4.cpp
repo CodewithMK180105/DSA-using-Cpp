@@ -1,4 +1,4 @@
-// Longest Common Prefix using the sorting method.
+// Longest Common Prefix using the sorting method. O(n*lon(n)m)*n
 
 #include<iostream>
 #include<vector>
