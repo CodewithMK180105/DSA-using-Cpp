@@ -1,0 +1,26 @@
+Maps/Hashmaps:  ---STL container which stores key value pairs.
+                ---The elements are stored in the ascending or descending order
+                ---Maps cannot have duplicate keys
+                ---Impleented using BST
+
+
+1. Header: #include<map>
+
+2. Declaration:
+
+    map<key_data-type,value_data-type> map_name; // By default ascending order.
+    map<key_data-type,value_data-type,greater<key_data-type>> map_name; // descending order.
+
+3. Initialization: map<key_data-type,value_data-type> map_name={{k1,v1},{k2,v2},{k3,v3}};
+
+4. Insertion: 
+    
+    a. directory.insert(make_pair("ABC",379))
+    b. directory["ABC"]=379
+
+5. Printing the map: 
+    // Using the for loop
+    for(auto element: map_name){
+        key=>element.first();
+        value=>element.second();
+    }

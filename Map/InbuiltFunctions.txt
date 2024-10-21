@@ -1,0 +1,26 @@
+1. erase:   ---m.erase(itr) => O(log(n))
+            ---m.erase(key) => O(log(n))
+            ---m.erase(str_itr,end_itr) => => O(n)
+
+2. swap:    m1.swap(m2)
+            swap(m1,m2)   ....2 maps can be swapped if and only if they are of same type.
+
+3. clear: map_name.clear()
+
+4. isEmpty: map_name.empty()
+
+5. size: map_name.size()
+
+6. max_size: map_name.max_size()
+
+7. find: map_name.find(key)=>returns the itr to the element if present, else returns map_name.end()
+
+8. count: map_name.count() // either 1 or 0
+
+9. upper_bound: map_name.upper_bound(key)
+
+10. lower_bound: map_name.lower_bound(key)
+
+11. begin(),end()
+
+12. rbegin(),rend()
