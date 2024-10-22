@@ -4,8 +4,10 @@ Multimap:
     duplicate keys are allowed.
 
 Functions: 
-    insert,erase,find, count, begin, end, rbegin, rend --- same as previous.
+    insert,erase,find, count, begin, end, rbegin, rend ---working same as previous
 
     m.count(key)   ---returns the number of times key ouccured in the multimap.
 
 Note: multimap[key]=value // Not a function of a multimap.
+
+insert,erase,find => O(log(n))

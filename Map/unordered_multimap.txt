@@ -1,0 +1,10 @@
+Unordered Multimap: 
+    STL containers stores key value pairs
+    elements are not ordered
+    duplicate keys are allowed
+    Impleted using Hashing 
+
+Operations: Insertion, Deletion, Search =>  O(1)    .....Average Case
+                                            O(n)    .....Worst Case
+
+Inbuilt functions: insert, erase, find, count, begin, end, rbegin, rend

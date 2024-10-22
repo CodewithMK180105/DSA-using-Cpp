@@ -24,3 +24,5 @@ Maps/Hashmaps:  ---STL container which stores key value pairs.
         key=>element.first();
         value=>element.second();
     }
+
+Note: insert,erase,find => O(log(n))
