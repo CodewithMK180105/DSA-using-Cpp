@@ -1,0 +1,11 @@
+Multimap: 
+    STL containers that stores key value pairs.
+    elements are stored in an ascending/ descending order.
+    duplicate keys are allowed.
+
+Functions: 
+    insert,erase,find, count, begin, end, rbegin, rend --- same as previous.
+
+    m.count(key)   ---returns the number of times key ouccured in the multimap.
+
+Note: multimap[key]=value // Not a function of a multimap.
