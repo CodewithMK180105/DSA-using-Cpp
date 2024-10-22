@@ -1,0 +1,12 @@
+Unordered maps:
+    STL containers that stores key_value pairs.
+
+    ---elements are not ordered.
+    ---key will be unique
+    ---Operation (inerstion,deletion,search) => O(1)    ......Average case due to hashing
+                                                O(n)    ......Worst case due to collision
+
+functions:
+    1. Find: m.find(key) => itr to element if present else it returns m.end()
+    2. count: m.count(key)  {either 0 or 1} => return number of occurrences of key.
+    3. advance: m.advance(itr,2)
