@@ -40,7 +40,7 @@ int countWords(string str)
 // Driver code
 int main()
 {
-    string s = "geeks for geeks geeks \n""contribution placements"" raf gnh";
+    string s = "geeks for geeks geeks \n    ""contribution placements"" raf gnh";
     cout<<s<<endl;
     cout << " Number of words are: " << countWords(s);
     return 0;
