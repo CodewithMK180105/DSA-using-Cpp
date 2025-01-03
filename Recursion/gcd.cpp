@@ -9,3 +9,5 @@ int main(){
     int n1,n2; cin>>n1>>n2;
     cout<<gcd(n1,n2);
 }
+
+// TC=> O(log(a+b))
