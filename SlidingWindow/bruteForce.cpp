@@ -1,3 +1,5 @@
+// Calculate the maximum sum of the subarray of the size k.
+
 #include<iostream>
 #include<climits>
 using namespace std;
