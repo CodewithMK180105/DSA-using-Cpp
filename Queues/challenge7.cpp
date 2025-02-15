@@ -1,3 +1,5 @@
+// Reverse the first k elements of the queue.
+
 #include<iostream>
 #include<queue>
 #include<stack>
