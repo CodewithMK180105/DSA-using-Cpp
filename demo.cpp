@@ -1,56 +1,74 @@
-#include <iostream>
-#include <vector>
-#include <algorithm> // For swap function
+#include<bits/stdc++.h>
+#define pp pair<int, int>
 using namespace std;
-
-// Function to sort the first k elements using insertion sort
-void partialSort(vector<int>& arr, int k) {
-    for (int i = 1; i < k; i++) {
-        int key = arr[i];
-        int j = i - 1;
-
-        // Move elements of arr[0..i-1] that are greater than key
-        // to one position ahead of their current position
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-        arr[j + 1] = key;
+vector<list<pp>> graph; // node, wt
+unordered_set<int> vis; // node
+priority_queue<pp, vector<pp>, greater<pp>> pq; // wt, node
+unordered_map<int, int> mp; // node, dist
+void edge(int u, int v, int wt, bool bidir=true){
+    graph[u].push_back({v, wt});
+    if(bidir){
+        graph[v].push_back({u, wt});
     }
 }
-
-// Function to find the k-th smallest element
-int findKthSmallest(vector<int>& arr, int k) {
-    int n = arr.size();
-
-    // Step 1: Sort the first k elements
-    partialSort(arr, k);
-
-    // Step 2: Iterate through the remaining elements
-    for (int i = k; i < n; i++) {
-        if (arr[i] < arr[k - 1]) {
-            // Place the current element in the sorted part
-            arr[k - 1] = arr[i];
-
-            // Restore the sorted order of the first k elements
-            partialSort(arr, k);
+int prims(int src, int n){
+    vector<int> par(n+1,0);
+    for(int i=0;i<n+1;i++){
+        mp[i]=INT_MAX;
+    }
+    par[src]=0;
+    int res=0;
+    pq.push({0, src});
+    int edgeCount=0;
+    while(edgeCount<n && !pq.empty()){
+        pp curr=pq.top();
+        int weight=curr.first;
+        int node=curr.second;
+        if(vis.count(node)){
+            pq.pop();
+            continue;
+        }
+        vis.insert(node);
+        res+=weight;
+        edgeCount++;
+        pq.pop();
+        for(pp neighbor: graph[node]){
+            if(!vis.count(neighbor.first) && mp[neighbor.first]>neighbor.second){
+                pq.push({neighbor.second, neighbor.first});
+                par[neighbor.first]=node;
+                mp[neighbor.first]=neighbor.second;
+            }
         }
     }
-
-    // Step 3: Return the k-th smallest element
-    return arr[k - 1];
+    return res;
 }
-
-int main() {
-    vector<int> arr = {5,4,7,8,1,2,3,6};
-    int k = 3; // Change k to find a different k-th smallest element
-
-    if (k > 0 && k <= arr.size()) {
-        int kthSmallest = findKthSmallest(arr, k);
-        cout << "The " << k << "-th smallest element is: " << kthSmallest << endl;
-    } else {
-        cout << "Invalid value of k." << endl;
+int main(){
+    int n, m;
+    cin>>n>>m;
+    graph.resize(n+1, list<pp>());
+    while(m--){
+        int u,v,wt;
+        cin>>u>>v>>wt;
+        edge(u,v,wt);
     }
-
+    int src; cin>>src;
+    cout<<prims(src, n);
     return 0;
 }
+
+
+
+
+// 9 12
+// 0 1 4
+// 0 4 1
+// 0 7 3
+// 1 2 1
+// 2 3 4
+// 2 4 1
+// 3 6 2
+// 4 5 4
+// 4 8 2
+// 5 6 3
+// 5 8 3
+// 8 7 1

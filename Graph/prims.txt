@@ -1,0 +1,9 @@
+- DS-Visited set, priority_queue<pair>, unordered_map
+
+- insert the pair of the {-1, src} int the priority_queue
+- one by one remove the root element of the priority_queue
+- if the root element is already visited then we will just continue.
+- if the root element is not visited then we will mark the root as the visited
+- we store the weight of the pair in the ans
+- update the mapping
+- go to every neighbor of the curr element, and only add those which are non visited and have a better weight proposition 
