@@ -1,50 +1,17 @@
 #include<iostream>
-#include<queue>
-#include<stack>
 using namespace std;
-void reversefirstKElements(queue<int>& q, int k){
-    stack<int> st;
-    for(int i=0;i<k;i++){
-        st.push(q.front());
-        q.pop();
+void subsets(string original, string ans, int i, int &n){
+    if(i==n){
+        cout<<ans<<endl;
+        return;
     }
-    for(int i=0;i<k;i++){
-        q.push(st.top());
-        st.pop();
-    }
-    int remaining=q.size()-k;
-    for(int i=0;i<remaining;i++){
-        int front=q.front();
-        q.pop();
-        q.push(front);
-    }
-}
-void display(queue<int>& q){
-    for(int i=0;i<q.size();i++){
-        int front=q.front();
-        cout<<front<<" ";
-        q.pop();
-        q.push(front);
-    }
-    cout<<endl;
+    
+    subsets(original, ans, i+1, n);
+    subsets(original, ans+original[i], i+1, n);
 }
 int main(){
-    queue<int> q;
-
-    q.push(1);
-    q.push(2);
-    q.push(3);
-    q.push(4);
-    q.push(5);
-    q.push(6);
-    q.push(7);
-    q.push(8);
-
-    display(q);
-
-    reversefirstKElements(q,3);
-
-    display(q);
-
+    string str="abcd";
+    int n=str.length();
+    subsets(str, "", 0, n);
     return 0;
 }
