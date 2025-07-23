@@ -1,17 +1,20 @@
 #include<iostream>
+#include<vector>
 using namespace std;
-void subsets(string original, string ans, int i, int &n){
-    if(i==n){
-        cout<<ans<<endl;
-        return;
-    }
-    
-    subsets(original, ans, i+1, n);
-    subsets(original, ans+original[i], i+1, n);
-}
 int main(){
-    string str="abcd";
-    int n=str.length();
-    subsets(str, "", 0, n);
+    vector<int> v={7,1,2,5,8,4,9,3,6};
+    int k=3;
+    int i=0,j=0;
+    int sum=0;
+    for(j=0;j<k;j++){
+        sum+=v[j];
+    }
+
+    while(j<v.size()){
+        sum=max(sum, sum+v[j]-v[i]);
+        i++, j++;
+    }
+
+    cout<<sum;
     return 0;
 }
